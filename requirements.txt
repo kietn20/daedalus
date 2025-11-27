@@ -1,0 +1,15 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+pydantic
+
+# Google Cloud / AI
+google-generativeai
+
+# Utilities
+python-dotenv
+requests
+
+# Testing
+pytest
+httpx

@@ -1,0 +1,34 @@
+# --- Secrets ---
+.env
+.env.local
+.env.*
+keys/
+secrets/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.pytest_cache/
+
+# --- Node.js / React ---
+node_modules/
+dist/
+build/
+.output/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- IDE / System ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Deployment ---
+coverage/
+htmlcov/
