@@ -37,7 +37,7 @@ def process_graph_update(current_state: GraphState, instructions: str) -> GraphS
     """
 
     model = GenerativeModel(
-        model_name="gemini-1.5-pro-latest",
+        model_name="gemini-3-pro-preview",
         system_instruction=SYSTEM_INSTRUCTION
     )
 
@@ -54,7 +54,10 @@ def process_graph_update(current_state: GraphState, instructions: str) -> GraphS
 
     response = model.generate_content(
         prompt,
-        generation_config={"response_mine_type": "application/json"}
+        generation_config={
+            "response_mime_type": "application/json",
+            "thinking_config": {"thinking_level": "high"} 
+        }
     )
 
     try:
@@ -75,5 +78,5 @@ def process_graph_update(current_state: GraphState, instructions: str) -> GraphS
         print(f"Failed to decode JSON from Gemini: {response.text}")
         raise ValueError("AI returned invalid JSON")
     except Exception as e:
-        print(f"Error parsing graph state: {e}")
+        print(f"Gemini 3 Error: {e}")
         raise e
