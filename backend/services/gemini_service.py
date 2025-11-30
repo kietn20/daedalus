@@ -3,7 +3,9 @@ import json
 import google.generativeai as genai
 from google.generativeai import GenerativeModel
 from models.graph_types import GraphState
+from dotenv import load_dotenv
 
+load_dotenv()
 
 if "GOOGLE_API_KEY" in os.environ:
     genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
@@ -56,7 +58,6 @@ def process_graph_update(current_state: GraphState, instructions: str) -> GraphS
         prompt,
         generation_config={
             "response_mime_type": "application/json",
-            "thinking_config": {"thinking_level": "high"} 
         }
     )
 
