@@ -27,7 +27,7 @@ async def update_graph(request: UpdateRequest):
 
     try:
         # pass to Gemini service
-        new_state = process_graph_update(request.current_state, request.user_instructions)
+        new_state = process_graph_update(request.current_state, request.user_instruction)
         return new_state
     except Exception as e:
         print(f"Error processing update: {e}")

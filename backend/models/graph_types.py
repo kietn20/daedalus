@@ -29,5 +29,5 @@ class GraphState(BaseModel):
     edges: List[Edge]
 
 class UpdateRequest(BaseModel):
-    currrent_state: GraphState
-    user_instructions: str
+    current_state: GraphState
+    user_instruction: str
